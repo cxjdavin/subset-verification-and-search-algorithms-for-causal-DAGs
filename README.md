@@ -8,7 +8,7 @@ This is the accompanying repository the "Subset verification and search algorith
 
 We implemented our subset verification algorithm and tested its correctness on random trees and random Erdős-Rényi graphs with random subsets of target edges $T$.
 On random trees, we know that the subset verification should be 1 since intervening on the root always suffices regardless of what $T$ is.
-On random Erdős-Rényi graphs $G^*$, we chose $T$ to be a random subset of covered edges of $G^*$ and checked that the subset verifying set is indeed a minimum vertex cover of $T$, whose size could be smaller than the full verification number $\nu(G^*)$.
+On random Erdős-Rényi graphs G<sup>\*</sup>, we chose $T$ to be a random subset of covered edges of G<sup>\*</sup> and checked that the subset verifying set is indeed a minimum vertex cover of $T$, whose size could be smaller than the full verification number $\nu$(G<sup>\*</sup>).
 
 ### Node-induced subset search
 
@@ -37,7 +37,7 @@ Then, for each graph with $|E| = m$ edges, we sampled a random subset $T \subset
 Additionally, we run the verification algorithm of [CSB22] on the entire graph.
 As expected, the verification number exactly matches the subset verification number in the special case where $|T| = m$.
 Despite the trend suggested in the plots below, the number of target edges is typically \emph{not} a good indication for the number of interventions needed to be performed and one can always construct examples where $|T'| > |T|$ but $\nu(G,T') \not> \nu(G,T)$.
-For example, for a subset $T \subseteq E$, we have $\nu(G^*, T') = \nu(G^*, T)$ if $T' \supset T$ is obtained by adding edges that are already oriented by orienting $T$.
+For example, for a subset $T \subseteq E$, we have $\nu($ G<sup>\*</sup>$, T') = \nu($ G<sup>\*</sup>$, T)$ if $T' \supset T$ is obtained by adding edges that are already oriented by orienting $T$.
 Instead, the number of "independent target edges" (akin to "linearly independent vectors" in linear algebra) is a more appropriate measure.
 
 <p float="middle">
@@ -67,7 +67,7 @@ Observe that the generated graph is almost a complete graph when $p = 0.3$.
 In this experiment, we compare node-induced subset search with full search algorithms on the task of local causal graph discovery where we only wish to orient edges around a target node of interest.
 Following [CSB22], we base our evaluation on the experimental framework of [SMG+20] which empirically compares atomic intervention policies.
 
-We compared the following atomic intervention algorithms against the atomic verification number $\nu_1(G^*)$ and atomic subset verification number $\nu_1(G^*, T)$:
+We compared the following atomic intervention algorithms against the atomic verification number $\nu_1$(G<sup>\*</sup>) and atomic subset verification number $\nu_1($ G<sup>\*</sup>$, T)$:
 - `random`: A baseline algorithm that repeatedly picks a random non-dominated node (a node that is incident to some unoriented edge) from the interventional essential graph
 - `dct`: `DCT Policy` of [SMG+20]
 - `coloring`: `Coloring` of [SKD+15]
@@ -76,10 +76,10 @@ We compared the following atomic intervention algorithms against the atomic veri
 That is, we may end up increasing the set of target edges $T \subseteq E$ if the input $T$ was not already all edges within a node-induced subgraph.
 However, note that the given inputs $T$ for this experiment already includes all edges within a node-induced subgraph so this is not a concern.
 
-While our algorithms to construct the Hasse diagram and solve the produced interval stabbing problem is fast, we remark that the current implementation for computing $\{R(G^*,v)\}_{v \in V}$ in the `causaldag` package (https://causaldag.readthedocs.io/en/latest/#) can be slow.
+While our algorithms to construct the Hasse diagram and solve the produced interval stabbing problem is fast, we remark that the current implementation for computing $\{R($ G<sup>\*</sup>$,v)\}_{v \in V}$ in the `causaldag` package (https://causaldag.readthedocs.io/en/latest/#) can be slow.
 In particular, it is *not* the $\mathcal{O}(d \cdot |E|)$ time algorithm 2 of [WBL21] mentioned in Appendix A of our paper.
-In our experiments, computing $\{R(G^*,v)\}_{v \in V}$ takes up more than 98\% of the running time for computing subset verification numbers for each graph $G^*$.
-However, note that in practical use case scenarios, one simply use the algorithms without actually needing computing $\{R(G^*,v)\}_{v \in V}$, so this is not a usability concern.
+In our experiments, computing $\{R($ G<sup>\*</sup>$,v)\}_{v \in V}$ takes up more than 98\% of the running time for computing subset verification numbers for each graph G<sup>\*</sup>.
+However, note that in practical use case scenarios, one simply use the algorithms without actually needing computing $\{R($ G<sup>\*</sup>$,v)\}_{v \in V}$, so this is not a usability concern.
 
 <p float="middle">
 <img src="./figures/p0001_hop1_interventioncount.png" alt="1-hop" width="45%"/>
