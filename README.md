@@ -76,10 +76,10 @@ We compared the following atomic intervention algorithms against the atomic veri
 That is, we may end up increasing the set of target edges $T \subseteq E$ if the input $T$ was not already all edges within a node-induced subgraph.
 However, note that the given inputs $T$ for this experiment already includes all edges within a node-induced subgraph so this is not a concern.
 
-While our algorithms to construct the Hasse diagram and solve the produced interval stabbing problem is fast, we remark that the current implementation for computing $\{R$(G<sup>\*</sup>, $v)\}_{v \in V}$ in the `causaldag` package (https://causaldag.readthedocs.io/en/latest/#) can be slow.
+While our algorithms to construct the Hasse diagram and solve the produced interval stabbing problem is fast, we remark that the current implementation for computing $\{R$(G<sup>\*</sup>, $v$)$\}_{v \in V}$ in the `causaldag` package (https://causaldag.readthedocs.io/en/latest/#) can be slow.
 In particular, it is *not* the $\mathcal{O}(d \cdot |E|)$ time algorithm 2 of [WBL21] mentioned in Appendix A of our paper.
-In our experiments, computing $\{R$(G<sup>\*</sup>, $v)\}_{v \in V}$ takes up more than 98\% of the running time for computing subset verification numbers for each graph G<sup>\*</sup>.
-However, note that in practical use case scenarios, one simply use the algorithms without actually needing computing $\{R$(G<sup>\*</sup>, $v)\}_{v \in V}$, so this is not a usability concern.
+In our experiments, computing $\{R$(G<sup>\*</sup>, $v$)$\}_{v \in V}$ takes up more than 98\% of the running time for computing subset verification numbers for each graph G<sup>\*</sup>.
+However, note that in practical use case scenarios, one simply use the algorithms without actually needing computing $\{R$(G<sup>\*</sup>, $v$)$\}_{v \in V}$, so this is not a usability concern.
 
 <p float="middle">
 <img src="./figures/p0001_hop1_interventioncount.png" alt="1-hop" width="45%"/>
