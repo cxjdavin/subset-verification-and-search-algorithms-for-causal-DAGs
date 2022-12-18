@@ -86,7 +86,7 @@ However, note that in practical use case scenarios, one simply use the algorithm
 <img src="./figures/p0001_hop3_interventioncount.png" alt="3-hop" width="45%"/>
 </p>
 
-**Above**: `SubsetSearch` consistently uses less interventions than existing state-of-the-art full graph search algorithms when we only wish to orient edges within a r-hop neighborhood of a randomly chosen target node $v$, for $r \in \{1,3\}$ (Left: 1-hop; Right: 3-hop).
+**Above**: `SubsetSearch` consistently uses less interventions than existing state-of-the-art full graph search algorithms when we only wish to orient edges within a r-hop neighborhood of a randomly chosen target node $v$. Left: 1-hop; Right: 3-hop.
 
 ## References
 
