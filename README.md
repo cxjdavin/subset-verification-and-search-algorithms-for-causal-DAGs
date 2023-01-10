@@ -1,6 +1,16 @@
 # Subset verification and search algorithms for causal DAGs
 
-This is the accompanying repository the "Subset verification and search algorithms for causal DAGs" paper. It is available at (link).
+This is the accompanying repository the "Subset verification and search algorithms for causal DAGs" paper. It is available at https://arxiv.org/abs/2301.03180. Our experiments are based on https://github.com/csquires/dct-policy, the accompanying repository of [SMG+20].
+
+## Instructions on reproducing our experiments
+
+To reproduce our figures in the appendix, execute `bash script.sh` after cloning. The script does the following:
+1) Download necessary files
+2) Modify the `dct-policy` codebase appropriately for our experiments
+3) Run the experiments
+4) Generate the plots and place in a folder called `figures`
+
+We also included a copy of the produced `figures` sub-directory in here so you may look at the output without running the script.
 
 ## Implementation details
 
@@ -90,7 +100,7 @@ However, note that in practical use case scenarios, one simply use the algorithm
 
 ## References
 
-[This paper] Davin Choo, and Kirankumar Shiragur. Subset verification and search algorithms for causal DAGs. 2022. Available at (link)
+[This paper] Davin Choo, and Kirankumar Shiragur. Subset verification and search algorithms for causal DAGs. 2022. Available at https://arxiv.org/abs/2301.03180
 
 [CSB22] Davin Choo, Kirankumar Shiragur, and Arnab Bhattacharyya. Verification and search algorithms for causal DAGs. Advances in Neural Information Processing Systems, 2022. Available at https://arxiv.org/abs/2206.15374
 
