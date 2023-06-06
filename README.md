@@ -1,6 +1,6 @@
 # Subset verification and search algorithms for causal DAGs
 
-This is the accompanying repository the "Subset verification and search algorithms for causal DAGs" paper. It is available at https://arxiv.org/abs/2301.03180. Our experiments are based on https://github.com/csquires/dct-policy, the accompanying repository of [SMG+20].
+This is the accompanying repository of the "Subset verification and search algorithms for causal DAGs" paper. It is available at https://arxiv.org/abs/2301.03180. Our experiments are based on https://github.com/csquires/dct-policy, the accompanying repository of [SMG+20].
 
 ## Instructions on reproducing our experiments
 
